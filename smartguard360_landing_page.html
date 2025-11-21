@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartGuard 360 - AI-powered vehicle protection system with 360° cameras, automated weather response, and 5G connectivity. Protect your luxury car from anywhere.">
+    <title>SmartGuard 360 - Your Car Guards Itself</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        
+        .header-cta {
+            background: #00d4ff;
+            color: #1a1a2e;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a2e;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Section */
+        .section {
+            padding: 5rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Problem Cards */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .problem-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .problem-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        
+        .problem-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .stat {
+            color: #00d4ff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            gap: 4rem;
+        }
+        
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .feature:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .feature:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .feature-image {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            font-size: 5rem;
+        }
+        
+        .feature-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .benefit-box {
+            background: linear-gradient(135deg, #e3f5ff 0%, #d1f0ff 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #00d4ff;
+            margin-top: 1.5rem;
+        }
+        
+        .benefit-box strong {
+            color: #1a1a2e;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .pricing-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.highlight {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+        }
+        
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 2rem;
+        }
+        
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .price-features li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .price-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #1a1a2e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .urgency {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .value-list {
+            list-style: none;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        .value-list li {
+            padding: 0.75rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .value-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        /* Email Form */
+        .email-form {
+            max-width: 500px;
+            margin: 3rem auto;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 1.2rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .email-submit {
+            padding: 1.2rem 2.5rem;
+            background: #00d4ff;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .email-submit:hover {
+            transform: scale(1.05);
+        }
+        
+        .trust-line {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+        
+        /* Waitlist Counter */
+        .waitlist-counter {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 500px;
+            font-size: 1.2rem;
+        }
+        
+        .counter-number {
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .feature {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .pricing-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .email-form {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🛡️ SmartGuard 360</div>
+            <a href="#signup" class="header-cta">Join Waitlist</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Your Car Guards Itself—Rain, Snow, or Shine</h1>
+            <p>The first intelligent vehicle protection system that automatically responds to weather threats, records every angle in 4K, and lets you control everything from your phone—whether you're across the street or across the world.</p>
+            
+            <div class="cta-buttons">
+                <a href="#signup" class="btn-primary">🚀 Join the Waitlist—Save 30%</a>
+                <a href="#demo" class="btn-secondary">▶️ Watch SmartGuard in Action</a>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">✓ AI-Powered Protection</div>
+                <div class="trust-badge">✓ 24/7 Monitoring</div>
+                <div class="trust-badge">✓ 30-Day Money-Back Guarantee</div>
+                <div class="trust-badge">✓ Insurance Partner Approved</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Your Luxury Car Deserves Better Than Passive Protection</h2>
+            <p class="section-subtitle">Current solutions only react after damage occurs. SmartGuard 360 prevents damage before it happens.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🌡️</div>
+                    <h3>Weather Damage</h3>
+                    <p>Extreme heat ruins interiors, cracks dashboards, and costs thousands in repairs</p>
+                    <p class="stat">Interior damage claims average $3,500 per incident</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🚨</div>
+                    <h3>Theft & Vandalism</h3>
+                    <p>Traditional dashcams only record AFTER damage occurs—when it's too late</p>
+                    <p class="stat">Luxury vehicles are stolen every 4 minutes in major cities</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">✈️</div>
+                    <h3>Travel Anxiety</h3>
+                    <p>When you're traveling for business, you have no way to check on or protect your car</p>
+                    <p class="stat">70% of luxury car owners worry about their vehicle when away</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Overview -->
+    <section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">Meet SmartGuard 360—Protection That Thinks Ahead</h2>
+            <p class="section-subtitle">The world's first vehicle protection ecosystem that combines AI-powered surveillance, automated environmental response, and total remote control. Your car doesn't just record incidents—it prevents them.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Everything Your Car Needs to Protect Itself</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature">
+                    <div class="feature-image">📹</div>
+                    <div class="feature-content">
+                        <h3>True 360° Vision System</h3>
+                        <ul class="feature-list">
+                            <li><strong>6 Ultra-HD 4K Cameras</strong> covering every angle</li>
+                            <li>Front, rear, both sides, interior, and undercarriage</li>
+                            <li>No blind spots—complete incident documentation</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Benefit:</strong> When you're in Stockholm for a week, you have complete visual coverage of everything happening around your car in the Riyadh airport parking lot.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature">
+                    <div class="feature-image">🛡️</div>
+                    <div class="feature-content">
+                        <h3>Intelligent Environmental Response</h3>
+                        <ul class="feature-list">
+                            <li>Smart sensors detect heat, snow, storms</li>
+                            <li>Auto-deploys car cover in seconds</li>
+                            <li>Activates window tinting in extreme heat</li>
+                            <li>Heated cover prevents ice accumulation</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Scenario:</strong> Your car receives a hailstorm alert and deploys its protective cover automatically—while you're presenting to clients 5,000 km away. No damage, no stress.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature">
+                    <div class="feature-image">📡</div>
+                    <div class="feature-content">
+                        <h3>Always-Connected Multi-Network System</h3>
+                        <ul class="feature-list">
+                            <li>Seamless 5G, 4G, and WiFi connectivity</li>
+                            <li>Automatic network switching for 24/7 connection</li>
+                            <li>Works in underground parking and remote areas</li>
+                            <li>Real-time streaming with zero lag</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Benefit:</strong> Whether parked in an underground garage in Dubai or outdoor lot in Denver, you're always connected with instant alerts and live streaming.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature">
+                    <div class="feature-image">🌍</div>
+                    <div class="feature-content">
+                        <h3>GPS + Weather Intelligence</h3>
+                        <ul class="feature-list">
+                            <li>Real-time GPS tracking with geofencing alerts</li>
+                            <li>Hyperlocal weather forecasting integration</li>
+                            <li>Predictive protection deployment</li>
+                            <li>Movement alerts if car is towed/stolen</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Smart Alert:</strong> SmartGuard predicts a sandstorm in Riyadh 45 minutes before it arrives and automatically protects your car—before the first grain of sand hits.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature">
+                    <div class="feature-image">📱</div>
+                    <div class="feature-content">
+                        <h3>Complete Remote Control</h3>
+                        <ul class="feature-list">
+                            <li>Live camera streaming from anywhere</li>
+                            <li>Manual cover deployment via app</li>
+                            <li>Instant playback of incidents</li>
+                            <li>One-tap sharing with insurance/police</li>
+                            <li>System status dashboard</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Benefit:</strong> From your hotel in London, check on your car in Riyadh with live video, review any alerts, and share footage instantly if needed.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature">
+                    <div class="feature-image">🤖</div>
+                    <div class="feature-content">
+                        <h3>AI-Powered Incident Detection</h3>
+                        <ul class="feature-list">
+                            <li>Recognizes accidents, break-ins, vandalism automatically</li>
+                            <li>Distinguishes real threats from false alarms</li>
+                            <li>Auto-saves critical footage to cloud</li>
+                            <li>Sends instant alerts with video clips</li>
+                        </ul>
+                        <div class="benefit-box">
+                            <strong>Intelligence:</strong> AI knows the difference between a bird landing on your car and someone trying to break in—so you only get alerts that matter.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing">
+        <div class="container">
+            <h2 class="section-title">Premium Protection at a Price That Makes Sense</h2>
+            <p class="section-subtitle">Get everything you need in one integrated system—for less than buying components separately</p>
+            
+            <div class="pricing-comparison">
+                <div class="pricing-card">
+                    <h3>What You'd Pay Today</h3>
+                    <ul class="price-features">
+                        <li>High-end dashcam system: $600</li>
+                        <li>GPS tracker + subscription: $400/year</li>
+                        <li>Premium car cover: $350</li>
+                        <li>Professional installation: $500</li>
+                        <li>Separate monitoring apps: $15/mo</li>
+                    </ul>
+                    <div class="price-tag">$1,850+</div>
+                    <p style="text-align: center; margin-top: 1rem;">First year + $580/year ongoing</p>
+                </div>
+                
+                <div class="pricing-card highlight">
+                    <h3 style="color: #00d4ff;">Early Bird Special</h3>
+                    <p>Limited to First 500 Customers</p>
+                    <div class="price-tag">
+                        <span class="price-old">$1,999</span><br>
+                        $1,399
+                    </div>
+                    <ul class="price-features">
+                        <li>Complete SmartGuard 360 system</li>
+                        <li>Professional installation included</li>
+                        <li>Lifetime hardware warranty</li>
+                        <li>First year monitoring FREE</li>
+                        <li>30-day money-back guarantee</li>
+                    </ul>
+                    <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">After year 1: $9.99/month for cloud storage & monitoring</p>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="#signup" class="btn-primary">Reserve Your SmartGuard—Save $600</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Your Questions Answered</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does SmartGuard 360 work with any car?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        SmartGuard 360 is designed for luxury and premium vehicles. Our system works with most makes and models manufactured after 2015. During installation scheduling, we verify compatibility with your specific vehicle.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What happens if I lose internet connectivity?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        SmartGuard 360 stores footage locally on encrypted storage and automatically uploads when connectivity returns. The system switches between 5G, 4G, and WiFi automatically to maintain connection. Critical alerts are sent via SMS if data connection is lost.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does installation take?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Professional installation typically takes 3-4 hours. Our certified technicians handle everything, including camera mounting, sensor installation, car cover integration, and app setup. No modifications are made to your vehicle's electrical system.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does this really lower my insurance premium?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! SmartGuard 360 is approved by partner insurance companies who offer up to 25% premium reduction for comprehensive coverage. We provide certification documentation for your insurer. Even non-partner insurers typically offer discounts for advanced security systems.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's your return policy?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We offer a 30-day money-back guarantee. If you're not completely satisfied, we'll remove the system and provide a full refund. We're confident you'll love the peace of mind SmartGuard brings.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        When will SmartGuard 360 ship?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We're currently in final production preparation. Early bird customers (first 500 signups) will receive their systems in Q2 2026, with installation scheduled within 2 weeks of delivery. We'll keep you updated every step of the way via email.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="signup">
+        <div class="container">
+            <h2 class="fade-in">Don't Let Your Luxury Car Suffer Preventable Damage</h2>
+            <p class="urgency">⏰ Early Bird Pricing Ends When We Reach 500 Signups</p>
+            
+            <ul class="value-list">
+                <li>Save $600 with early bird pricing</li>
+                <li>First-year monitoring completely FREE</li>
+                <li>Lock in lifetime hardware warranty</li>
+                <li>30-day money-back guarantee</li>
+            </ul>
+            
+            <div class="waitlist-counter">
+                Join <span class="counter-number" id="counter">2,847</span> car owners already on the waitlist
+            </div>
+            
+            <form class="email-form" id="waitlistForm">
+                <input type="email" class="email-input" placeholder="Enter your email to reserve your spot" required>
+                <button type="submit" class="email-submit">Reserve My SmartGuard 360</button>
+            </form>
+            
+            <p class="trust-line">🔒 Your information is secure. We'll only contact you about SmartGuard 360. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SmartGuard 360. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">Protecting luxury vehicles with AI, IoT, and 5G technology.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked FAQ if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Here you would integrate with Mailchimp, HubSpot, or your email service
+            // For now, we'll just show an alert
+            alert('Thank you for joining the waitlist! We\'ll contact you at: ' + email);
+            
+            // Increment counter
+            const counter = document.getElementById('counter');
+            const currentCount = parseInt(counter.textContent.replace(',', ''));
+            counter.textContent = (currentCount + 1).toLocaleString();
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animate counter on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .feature').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
