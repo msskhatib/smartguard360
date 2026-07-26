@@ -19,7 +19,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-DEFAULT_MODEL = "gemini-3.1-flash-image-preview"
+DEFAULT_MODEL = "gemini-2.5-flash-image"
 OUTPUT_DIR = Path.home() / "Documents" / "nanobanana_generated"
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 

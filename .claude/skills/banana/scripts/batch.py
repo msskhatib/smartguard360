@@ -28,7 +28,7 @@ PRICING = {
     "gemini-3.1-flash-image-preview": {"512": 0.020, "1K": 0.039, "2K": 0.078, "4K": 0.156},
     "gemini-2.5-flash-image": {"512": 0.020, "1K": 0.039},
 }
-DEFAULT_MODEL = "gemini-3.1-flash-image-preview"
+DEFAULT_MODEL = "gemini-2.5-flash-image"
 DEFAULT_RESOLUTION = "1K"
 DEFAULT_RATIO = "1:1"
 

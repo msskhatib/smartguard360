@@ -19,7 +19,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-DEFAULT_MODEL = "gemini-3.1-flash-image-preview"
+DEFAULT_MODEL = "gemini-2.5-flash-image"
 DEFAULT_RESOLUTION = "2K"  # Must be uppercase -- lowercase values are silently rejected by the API
 DEFAULT_RATIO = "1:1"
 OUTPUT_DIR = Path.home() / "Documents" / "nanobanana_generated"
